@@ -7,7 +7,7 @@ e = Entry(root, width=30, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
 
-def button_click(numero):
+def button_click(num):
     e.delete(0, END)
     e.insert(0, str(e.get()) + str(numero))
 
@@ -15,47 +15,47 @@ def button_clear():
     e.delete(0, END)
 
 def button_sum():
-    numero_1 = e.get()
+    num_1 = e.get()
     global f_num 
     global math
-    math = 'somar'
-    f_num = int(numero_1)
+    math = 'sum'
+    f_num = int(num_1)
     e.delete(0, END)
 
 def button_equal():
-    numero_2 = e.get()
+    num_2 = e.get()
     e.delete(0, END)
-    if math=='somar':
-        e.insert(0, f_num + int(numero_2))
-    elif math=='subtrair':
-        e.insert(0, f_num - int(numero_2))
-    elif math=='multiplicar':
-        e.insert(0, f_num * int(numero_2))
-    elif math=='dividir':
-        e.insert(0, f_num / int(numero_2))
+    if math=='sum':
+        e.insert(0, f_num + int(num_2))
+    elif math=='subtract':
+        e.insert(0, f_num - int(num_2))
+    elif math=='multiply':
+        e.insert(0, f_num * int(num_2))
+    elif math=='divide':
+        e.insert(0, f_num / int(num_2))
 
 def button_sub():
-    numero_1 = e.get()
+    num_1 = e.get()
     global f_num 
     global math
-    math = 'subtrair'
-    f_num = int(numero_1)
+    math = 'subtract'
+    f_num = int(num_1)
     e.delete(0, END)
 
 def button_mult():
-    numero_1 = e.get()
+    num_1 = e.get()
     global f_num 
     global math
-    math = 'multiplicar'
-    f_num = int(numero_1)
+    math = 'multiply'
+    f_num = int(num_1)
     e.delete(0, END)
 
 def button_divide():
-    numero_1 = e.get()
+    num_1 = e.get()
     global f_num 
     global math
-    math = 'dividir'
-    f_num = int(numero_1)
+    math = 'divide'
+    f_num = int(num_1)
     e.delete(0, END)
 
 
@@ -72,10 +72,10 @@ button_9 = Button(root, text='9', padx=40, pady=20, command=lambda: button_click
 button_0 = Button(root, text='0', padx=40, pady=20, command=lambda: button_click(0))
 button_add = Button(root, text='+', bg = '#F6B4C3', padx=39, pady=20, command=button_sum)
 button_equal = Button(root, text='=', bg = '#F4F4DC', padx=91, pady=20, command=button_equal)
-button_limpar = Button(root, text='Limpar', bg = '#BECAE5', padx=79, pady=20, command= button_clear)
-button_subtrair = Button(root, text='-', bg='#F1D4C8', padx=40, pady=20, command=button_subtrair)
-button_multiplicar = Button(root, text='x', bg = '#C3BAD6', padx=41, pady=20, command=button_mult)
-button_dividir = Button(root, text='/', bg='#C9DDD5', padx=40, pady=20, command=button_divide)
+button_clear = Button(root, text='Limpar', bg = '#BECAE5', padx=79, pady=20, command= button_clear)
+button_subtract = Button(root, text='-', bg='#F1D4C8', padx=40, pady=20, command=button_subtract)
+button_multiply = Button(root, text='x', bg = '#C3BAD6', padx=41, pady=20, command=button_mult)
+button_divide = Button(root, text='/', bg='#C9DDD5', padx=40, pady=20, command=button_divide)
 
 #Buttons
 button_1.grid(row=3, column=0)
@@ -91,12 +91,12 @@ button_8.grid(row= 1, column=1)
 button_9.grid(row= 1, column=2)
 
 button_0.grid(row= 4, column=0)
-button_limpar.grid(row=4, column=1, columnspan=2)
+button_clear.grid(row=4, column=1, columnspan=2)
 button_add.grid(row=5, column=0)
 button_equal.grid(row=5, column =1, columnspan=2)
-button_subtrair.grid(row=6, column=0)
-button_multiplicar.grid(row=6, column=1)
-button_dividir.grid(row=6, column=2)
+button_subtract.grid(row=6, column=0)
+button_multiply.grid(row=6, column=1)
+button_divide.grid(row=6, column=2)
 
 root.mainloop()
         
